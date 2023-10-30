@@ -3,19 +3,33 @@ import { useState } from "react";
 import './login.css';
 const LoginPage = props => {
   const Title = styled.h1`
-    font-size: 4rem;
+    font-size: 40px;
+    font-weight: 200;
     text-align: center;
     color: #BF4F74;
   `;
+
   const Wrapper = styled.section`
-    padding: 3em;
-    background: papayawhip;
+    margin: 3% auto;
+    padding: 40px 40px;
+    text-align: center;
+    background-color: #f9f5eb;
+    font-family: 'Architechts Daughter', cursive;
+    width: fit-content;
   `;
+
+  const Heading = styled.p`
+    margin: 10px 10px;
+    font-style: italic;
+    font-size: 1rem;
+  `;
+
   const [contact, setContact] = useState({
     name: '',
     email: '',
     password: ''
   });
+
   function handleChange(event) {
     const { name, value } = event.target;
     setContact((previnfo) => {
@@ -28,12 +42,13 @@ const LoginPage = props => {
 
 
   return (
-    <div>
       <Wrapper>
         <Title>
           Hello, {contact.name}
         </Title>
-      </Wrapper>
+        <Heading>
+          Please login below
+        </Heading>
       <input
         name="name"
         type="text"
@@ -58,7 +73,7 @@ const LoginPage = props => {
         value={contact.password}
         autoComplete="off"
       />
-    </div>
+      </Wrapper>
   );
 }
 
