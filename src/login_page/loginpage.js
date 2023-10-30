@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { useState } from "react";
+import React, { useState } from "react";
+
 import './login.css';
 const LoginPage = props => {
   const Title = styled.h1`
     font-size: 40px;
     font-weight: 200;
     text-align: center;
-    color: #BF4F74;
+    color: #174590;
   `;
 
   const Wrapper = styled.section`
@@ -30,6 +31,15 @@ const LoginPage = props => {
     password: ''
   });
 
+  function userLoginHandler() {
+    // dispatch(login({
+    //     name: contact.name,
+    //     email: contact.email,
+    //     password: contact.password
+    // }));
+    console.log("Clicked");
+}
+
   function handleChange(event) {
     const { name, value } = event.target;
     setContact((previnfo) => {
@@ -42,13 +52,15 @@ const LoginPage = props => {
 
 
   return (
-      <Wrapper>
-        <Title>
-          Hello, {contact.name}
-        </Title>
-        <Heading>
-          Please login below
-        </Heading>
+    <React.Fragment>
+
+    <Wrapper>
+      <Title>
+        Welcome, {contact.name}
+      </Title>
+      <Heading>
+        Please login below
+      </Heading>
       <input
         name="name"
         type="text"
@@ -73,7 +85,11 @@ const LoginPage = props => {
         value={contact.password}
         autoComplete="off"
       />
-      </Wrapper>
+    <button 
+         onClick={userLoginHandler}
+      > Login </button>
+    </Wrapper>
+    </React.Fragment>
   );
 }
 
