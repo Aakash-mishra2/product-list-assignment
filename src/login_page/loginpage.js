@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../store/accountSlice";
 
 import './login.css';
 const LoginPage = props => {
+  const dispatch = useDispatch();
+  
   const Title = styled.h1`
     font-size: 40px;
     font-weight: 200;
@@ -32,11 +36,11 @@ const LoginPage = props => {
   });
 
   function userLoginHandler() {
-    // dispatch(login({
-    //     name: contact.name,
-    //     email: contact.email,
-    //     password: contact.password
-    // }));
+    dispatch(login({
+      name: contact.name,
+      email: contact.email,
+      password: contact.password
+  }));
     console.log("Clicked");
   }
 
