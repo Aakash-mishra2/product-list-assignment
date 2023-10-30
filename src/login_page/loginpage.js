@@ -11,12 +11,12 @@ const LoginPage = props => {
   `;
 
   const Wrapper = styled.section`
-    margin: 3% auto;
-    padding: 40px 40px;
+    margin: 4% auto;
     text-align: center;
     background-color: #f9f5eb;
     font-family: 'Architechts Daughter', cursive;
     width: fit-content;
+    margin-bottom: 1rem;
   `;
 
   const Heading = styled.p`
@@ -38,7 +38,7 @@ const LoginPage = props => {
     //     password: contact.password
     // }));
     console.log("Clicked");
-}
+  }
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -53,14 +53,14 @@ const LoginPage = props => {
 
   return (
     <React.Fragment>
-
-    <Wrapper>
-      <Title>
-        Welcome, {contact.name}
-      </Title>
-      <Heading>
-        Please login below
-      </Heading>
+      <Wrapper>
+        <Title>
+          Welcome, {contact.name}
+        </Title>
+        <Heading>
+          Please login below
+        </Heading>
+      </Wrapper>
       <input
         name="name"
         type="text"
@@ -85,10 +85,9 @@ const LoginPage = props => {
         value={contact.password}
         autoComplete="off"
       />
-    <button 
-         onClick={userLoginHandler}
+      <button
+        onClick={userLoginHandler}
       > Login </button>
-    </Wrapper>
     </React.Fragment>
   );
 }
