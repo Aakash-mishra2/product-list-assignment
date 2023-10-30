@@ -26,7 +26,7 @@ const LoginPage = props => {
   const Heading = styled.p`
     margin: 10px 10px;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.2rem;
   `;
 
   const [contact, setContact] = useState({
