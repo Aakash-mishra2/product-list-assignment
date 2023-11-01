@@ -7,12 +7,12 @@ const Title = styled.h1`
 font-size: 40px;
 font-weight: 200;
 text-align: center;
-color: #174590;
+color: #04364A;
 `;
 const Wrapper = styled.section`
 margin: 4% auto;
 text-align: center;
-background-color: #f9f5eb;
+background-color: #D0BFFF;
 font-family: 'Architechts Daughter', cursive;
 width: fit-content;
 margin-bottom: 1rem;
@@ -43,7 +43,7 @@ const Button = styled.button`
     border-radius: 25px;
     margin: 1rem 0.7rem;
     font-size: 19px;
-    background-color: #174590;
+    background-color: #04364A;
     color: white;
     height: 50px;
     width: 100px;

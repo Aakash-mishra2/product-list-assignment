@@ -3,10 +3,10 @@
 
 Deployed at :https://login-page-work.netlify.app/
 
-src
+```
+    src
  ┣ login_page
  ┃ ┣ loginpage.js
- ┃ ┣ login.css
  ┃ ┗ dashboard.js
  ┣ store
  ┃ ┣ accountSlice.js
@@ -19,7 +19,7 @@ src
  ┣ reportWebVitals.js
  ┣ setupTests.js
  ┗ logo.svg
-
+```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
