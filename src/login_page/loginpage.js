@@ -2,33 +2,62 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../store/accountSlice";
-
 import './login.css';
+
+const Title = styled.h1`
+font-size: 40px;
+font-weight: 200;
+text-align: center;
+color: #174590;
+`;
+
+
+const Wrapper = styled.section`
+margin: 4% auto;
+text-align: center;
+background-color: #f9f5eb;
+font-family: 'Architechts Daughter', cursive;
+width: fit-content;
+margin-bottom: 1rem;
+`;
+
+const Heading = styled.p`
+margin: 10px 10px;
+font-style: italic;
+font-size: 1.2rem;
+`;
+const Input = styled.input`
+border: 1px solid #213555;
+background-color: rgba(252, 252, 252, 0.2);
+width: 250px;
+border-radius: 3px;
+font-family: "Source Sans Pro", sans-serif;
+padding: 10px 15px;
+margin: 0 auto 10px auto;
+display: block;
+text-align: center;
+font-size: 18px;
+color: #213555;
+font-weight: 300;
+box-shadow: 4px 3px 7px 2px #00000040;
+`;
+
+const Button = styled.button`
+  letter-spacing: 2px;
+    box-shadow: 4px 3px 7px 2px #00000040;
+    border-radius: 25px;
+    margin: 1rem 0.7rem;
+    margin-left: 47%;
+    font-size: 19px;
+    background-color: #174590;
+    color: white;
+    height: 50px;
+    width: 100px;
+`;
+
 const LoginPage = props => {
   const dispatch = useDispatch();
   
-  const Title = styled.h1`
-    font-size: 40px;
-    font-weight: 200;
-    text-align: center;
-    color: #174590;
-  `;
-
-  const Wrapper = styled.section`
-    margin: 4% auto;
-    text-align: center;
-    background-color: #f9f5eb;
-    font-family: 'Architechts Daughter', cursive;
-    width: fit-content;
-    margin-bottom: 1rem;
-  `;
-
-  const Heading = styled.p`
-    margin: 10px 10px;
-    font-style: italic;
-    font-size: 1.2rem;
-  `;
-
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -43,8 +72,8 @@ const LoginPage = props => {
   }));
     console.log("Clicked");
   }
-
-  function handleChange(event) {
+   
+  const handleChange = (event) => {
     const { name, value } = event.target;
     setContact((previnfo) => {
       return {
@@ -56,7 +85,7 @@ const LoginPage = props => {
 
 
   return (
-    <React.Fragment>
+    <section >
       <Wrapper>
         <Title>
           Welcome, {contact.name}
@@ -65,15 +94,21 @@ const LoginPage = props => {
           Please login below
         </Heading>
       </Wrapper>
-      <input
+      <Input
         name="name"
         type="text"
         placeholder="Enter Name"
-        onChange={handleChange}
+        onChange={(event) => setContact((prev) => {
+            return {
+            ...prev, 
+            [event.target.name]: event.target.value
+            };
+            })
+        }
         value={contact.name}
         autoComplete="off"
       />
-      <input
+      <Input
         name="email"
         type="text"
         placeholder="Enter Email"
@@ -81,7 +116,7 @@ const LoginPage = props => {
         value={contact.email}
         autoComplete="off"
       />
-      <input
+      <Input
         name="password"
         placeholder="Password"
         type="password"
@@ -89,10 +124,11 @@ const LoginPage = props => {
         value={contact.password}
         autoComplete="off"
       />
-      <button
+      <Button
         onClick={userLoginHandler}
-      > Login </button>
-    </React.Fragment>
+      > Login 
+      </Button>
+    </section>
   );
 }
 

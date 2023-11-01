@@ -31,7 +31,7 @@ const LogoutButton = styled.button`
     height: 50px;
     width: 200px;
     background-color: #174590;
-`
+`;
     return(
         <div>
         <Wrapper>
