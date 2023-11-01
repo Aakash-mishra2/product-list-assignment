@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../store/accountSlice";
-import './login.css';
 
 const Title = styled.h1`
 font-size: 40px;
@@ -47,7 +46,7 @@ const Button = styled.button`
     box-shadow: 4px 3px 7px 2px #00000040;
     border-radius: 25px;
     margin: 1rem 0.7rem;
-    margin-left: 47%;
+    margin-left: auto;
     font-size: 19px;
     background-color: #174590;
     color: white;
