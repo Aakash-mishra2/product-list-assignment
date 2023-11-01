@@ -12,6 +12,7 @@ const Dashboard = () => {
   font-weight: 200;
   text-align: center;
   color: #174590;
+  margin-bottom: 5px;
 `;
 const Heading = styled.p`
     margin: 10px 10px;
@@ -25,22 +26,29 @@ const Wrapper = styled.section`
   font-family: 'Architechts Daughter', cursive;
   width: fit-content;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const LogoutButton = styled.button`
-    border-radius: 13px;
-    height: 50px;
-    width: 200px;
+    letter-spacing: 2px;
+    box-shadow: 4px 3px 7px 2px #00000040;
+    border-radius: 25px;
+    margin: 1rem 0.7rem;
+    font-size: 19px;
     background-color: #174590;
+    color: white;
+    height: 50px;
+    width: 100px;
 `;
+
     return(
-        <div>
         <Wrapper>
             <Title> Welcome back, <em>{userName}</em></Title>
             <Heading>{email}</Heading>
             <Heading>Click below to logout</Heading>
             <LogoutButton onClick={() => dispatch(logout())}> Logout </LogoutButton>
         </Wrapper>
-        </div>
     );
 };
 
