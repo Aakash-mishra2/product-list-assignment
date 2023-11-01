@@ -9,8 +9,6 @@ font-weight: 200;
 text-align: center;
 color: #174590;
 `;
-
-
 const Wrapper = styled.section`
 margin: 4% auto;
 text-align: center;
@@ -19,7 +17,6 @@ font-family: 'Architechts Daughter', cursive;
 width: fit-content;
 margin-bottom: 1rem;
 `;
-
 const Heading = styled.p`
 margin: 10px 10px;
 font-style: italic;
@@ -40,20 +37,22 @@ color: #213555;
 font-weight: 300;
 box-shadow: 4px 3px 7px 2px #00000040;
 `;
-
 const Button = styled.button`
   letter-spacing: 2px;
     box-shadow: 4px 3px 7px 2px #00000040;
     border-radius: 25px;
     margin: 1rem 0.7rem;
-    margin-left: auto;
     font-size: 19px;
     background-color: #174590;
     color: white;
     height: 50px;
     width: 100px;
 `;
-
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const LoginPage = props => {
   const dispatch = useDispatch();
   
@@ -84,7 +83,7 @@ const LoginPage = props => {
 
 
   return (
-    <section >
+    <Section >
       <Wrapper>
         <Title>
           Welcome, {contact.name}
@@ -127,7 +126,7 @@ const LoginPage = props => {
         onClick={userLoginHandler}
       > Login 
       </Button>
-    </section>
+    </Section>
   );
 }
 
