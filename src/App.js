@@ -1,26 +1,14 @@
-import LoginPage from "./login_page/loginpage";
-import Dashboard
- from "./login_page/dashboard";
-import { useSelector } from 'react-redux';
+import React from "react";
 import { Route, Routes } from 'react-router-dom';
-export default function App() {
-    const isLoggedIn = useSelector((state) => state.userAccount.isLoggedIn);
+import ProductFront from "./product-list/productFront";
 
-    let routes;
-    if (isLoggedIn) {
-        routes = (
+export default function App() {
+   
+        let routes = (
             <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<ProductFront />} />
             </Routes>
         )
-    }
-    else {
-        routes = (
-            <Routes>
-                <Route path="/" element={<LoginPage />} />
-            </Routes>
-        )
-    }
     return (
         <div>
             {routes}
