@@ -11,13 +11,13 @@ const Wrapper = styled.div`
 const ProductList = ({allProducts}) => {
     return (
         <Wrapper>
-            {allProducts.map((coin, index) => {
+            {allProducts.map((item, index) => {
                 return (
                     <ProductCard
                         key={index}
-                        image={coin.image}
-                        name={coin.name}
-                        price={coin.current_price}
+                        image={item.image}
+                        name={item.name}
+                        price={item.price}
                     />
                 );
             })}

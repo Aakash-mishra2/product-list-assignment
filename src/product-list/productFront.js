@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProductList from "./productList";
 import Pagination from "./pagination";
 import styled from "styled-components";
+import allProducts from "./styles/products_Data";
 
 const Heading = styled.h1`
     margin: 1rem 0;
@@ -13,7 +14,7 @@ const Heading = styled.h1`
 
 const ProductFront = () => {
 
-    const [productData, setProductData] = useState([]);
+    const [productData, setProductData] = useState(allProducts);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(8);
 
