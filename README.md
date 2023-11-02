@@ -1,25 +1,7 @@
-# Login Page App
+# Product List App
  This is a simple login page template using react, styled components and redux which can be easily used anywhere and on any app. 
 
-Deployed at :https://login-page-work.netlify.app/
 
-```
- src
- ┣ login_page
- ┃ ┣ loginpage.js
- ┃ ┗ dashboard.js
- ┣ store
- ┃ ┣ accountSlice.js
- ┃ ┗ index.js
- ┣ App.css
- ┣ index.css
- ┣ App.js
- ┣ App.test.js
- ┣ index.js
- ┣ reportWebVitals.js
- ┣ setupTests.js
- ┗ logo.svg
-```
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
