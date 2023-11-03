@@ -15,9 +15,10 @@ const ProductList = ({allProducts}) => {
                 return (
                     <ProductCard
                         key={index}
-                        image={item.image}
+                        image={item.url}
                         name={item.name}
                         price={item.price}
+                        description={item.description}
                     />
                 );
             })}

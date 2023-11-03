@@ -15,8 +15,8 @@
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: transparent;
-    color: #eee;
+    background: black;
+    color: white;
     border-color: #eee;
 }
 

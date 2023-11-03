@@ -1,15 +1,52 @@
-import './productCard.css'
-const ProductCard = ({image, name, price}) => {
+import styled from 'styled-components';
+const Wrapper = styled.div`
+    cursor: pointer;
+    background: rgb(231, 231, 231);
+    border-radius: 20px;
+    margin: 2rem 4rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    max-width: 40%;
+    flex-direction: row;
+    &:hover {
+        transform: scale(1.1);
+    }
+`;
+const Title = styled.div`
+    margin: 1rem;
+    max-width: fit-content;
+    h3{
+        margin-bottom: 5px;
+        color: #272727;
+    }
+    p{
+        color: black;
+    }
+`;
+const ProductImage = styled.div`
+    width: 130px;
+    height: 130px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+`;
+const ProductCard = ({ image, name, price, description }) => {
     return (
-        <div className='product'>
-            <div className='product_image'>
+        <Wrapper>
+            <ProductImage>
                 <img src={image} alt={name} />
-            </div>
-            <div className='product_info'>
-                <h2>{name}</h2>
+            </ProductImage>
+            <Title>
+                <h3>{name}</h3>
+                <p>{description}</p>
                 <h3>${price.toLocaleString()}</h3>
-            </div>
-        </div>
+            </Title>
+        </Wrapper>
     );
 }
 export default ProductCard;
