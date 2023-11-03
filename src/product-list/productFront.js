@@ -16,9 +16,9 @@ const Heading = styled.h1`
 
 const ProductFront = () => {
 
-    const [productData, setProductData] = useState(products.data.items);
+    const productData = products.data.items;
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(8);
+    const postsPerPage = 8;
 
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
