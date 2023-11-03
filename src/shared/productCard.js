@@ -6,7 +6,6 @@ const Wrapper = styled.div`
     margin: 2rem 4rem;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 1rem 1rem;
     transition: all 0.3s ease;
     display: flex;
     max-width: 40%;
@@ -16,9 +15,10 @@ const Wrapper = styled.div`
     }
 `;
 const Title = styled.div`
-    margin: 1rem;
+    margin: 0.5rem;
     max-width: fit-content;
     h3{
+        padding-top: 4px;
         margin-bottom: 5px;
         color: #272727;
     }
@@ -27,7 +27,7 @@ const Title = styled.div`
     }
 `;
 const ProductImage = styled.div`
-    width: 130px;
+    width: 300px;
     height: 130px;
     img{
         width: 100%;

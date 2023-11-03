@@ -1,4 +1,4 @@
-import ProductCard from "../shared/UI_Elements/productCard";
+import ProductCard from "../shared/productCard";
 import styled from "styled-components";
 
 const Wrapper = styled.div`

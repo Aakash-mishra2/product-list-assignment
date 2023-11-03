@@ -5,11 +5,13 @@ import styled from "styled-components";
 import products from "./styles/products_Data";
 
 const Heading = styled.h1`
-    margin: 1rem 0;
-    font-size: 70px;
-    color: #ffe400;
-    text-align: center;
-    text-decoration: underline;
+    margin: 0;
+    padding: 10px;
+    padding-left: 40px;
+    font-size: 45px;
+    color: #ECE3CE;
+    text-align: left;
+    background: #0C356A;
 `;
 
 const ProductFront = () => {
@@ -25,15 +27,16 @@ const ProductFront = () => {
     return (
         <React.Fragment>
             <Heading>Product List</Heading>
-            <ProductList 
-                allProducts={currentItems}
-            />
             <Pagination
                 totalItems={productData.length}
                 postsPerPage={postsPerPage}
                 setCurrentPage={setCurrentPage}
                 currentPage={currentPage}
             />
+            <ProductList 
+                allProducts={currentItems}
+            />
+            
         </React.Fragment>
     )
 }
