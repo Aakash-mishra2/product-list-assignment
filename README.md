@@ -1,6 +1,26 @@
 # Product List App
  This is a simple login page template using react, styled components and redux which can be easily used anywhere and on any app. 
-
+```
+📦src
+ ┣ 📂product-list
+ ┃ ┣ 📂styles
+ ┃ ┃ ┣ 📜pagination.css
+ ┃ ┃ ┗ 📜products_Data.js
+ ┃ ┣ 📜pagination.js
+ ┃ ┣ 📜productFront.js
+ ┃ ┗ 📜productList.js
+ ┣ 📂shared
+ ┃ ┗ 📜productCard.js
+ ┣ 📜App.css
+ ┣ 📜index.css
+ ┣ 📜App.test.js
+ ┣ 📜index.js
+ ┣ 📜reportWebVitals.js
+ ┣ 📜setupTests.js
+ ┣ 📜logo.svg
+ ┣ 📜styled_components.js
+ ┗ 📜App.js
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
