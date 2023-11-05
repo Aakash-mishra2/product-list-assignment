@@ -14,7 +14,7 @@ const NavBar = styled.div`
 `;
 const FilterButton = styled.button`
     padding: 8px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-right: 100px;
     background: white;
     border-radius: 12px;
@@ -41,10 +41,12 @@ const ProductFront = () => {
     const productData = products.data.items;
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 8;
-
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentItems = productData.slice(firstPostIndex, lastPostIndex);
+
+    const [openFilter, setOpenFilter ] = useState(false);
+    const toggleBox = () => setOpenFilter(p=>!p);
 
     return (
         <React.Fragment>
