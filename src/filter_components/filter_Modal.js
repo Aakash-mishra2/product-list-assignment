@@ -10,8 +10,21 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-import { p_c_filter } from "./filterSlice";
+import { p_c_filter, removeAll } from "./filterSlice";
 import { useDispatch } from "react-redux";
+
+import styled from "styled-components";
+const ApplyButton = styled.button`
+     padding: 8px;
+    margin-right: 50px;
+    background: white;
+    border-radius: 12px;
+    border-color: red;
+    width: max-content;
+    height: fit-content;
+    margin-bottom: 10px;
+    margin-top: 0;
+`;
 
 const ModalOverlay = (props) => {
     const content = (
@@ -45,9 +58,7 @@ const FilterModal = (props) => {
 
         })
     };
-    const applyFilter = () => {
 
-    }
     return (
         <React.Fragment>
             {props.show && <Backdrop onClick={props.closeBox} />}
@@ -60,8 +71,27 @@ const FilterModal = (props) => {
             >
                 <ModalOverlay
 
-                    footer={<button style={{ width: '100px', background: 'red' }} onClick={() => dispatch(p_c_filter(properties))}>Apply</button>}
-                    onSubmit = {handleChange}
+                    footer={
+                        <div>
+
+                            <ApplyButton onClick={() => {
+                                setProperties({
+                                    category: '',
+                                    price_range: ''
+                                })
+                                dispatch(removeAll());
+                                props.closeBox();
+                            }
+                            }><b>REMOVE ALL</b></ApplyButton>
+                            <ApplyButton onClick={() => {
+                                dispatch(p_c_filter(properties));
+                                props.closeBox();
+                            }
+                            }><b>APPLY</b></ApplyButton>
+
+                        </div>
+
+                    }
                 >
                     <Box className="box" sx={{ minWidth: 60 }}>
                         <FormControl fullWidth>

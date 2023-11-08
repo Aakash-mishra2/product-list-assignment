@@ -11,7 +11,7 @@ const filterSlice = createSlice({
                 category: [Apparel, Drinkware, Headgear], 
                 price_range: [Below 3,  3 to 10, Above 10]
             */
-           state.items = initialState;
+           state.items = initialState.items;
             if (action.payload.category !== '') {
                 state.items = initialState.items;
                 const category = ['apparel', 'drinkware', 'headgear'];
@@ -30,9 +30,12 @@ const filterSlice = createSlice({
                     state.items = state.items.filter((product) => parseInt(product.price) >= 10);
                 }
             }
+        },
+        removeAll : (state) => {
+            state.items = initialState.items;
         }
     }
 });
 
-export const { p_c_filter } = filterSlice.actions;
+export const { p_c_filter, removeAll } = filterSlice.actions;
 export default filterSlice.reducer;
