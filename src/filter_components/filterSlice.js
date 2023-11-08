@@ -20,13 +20,13 @@ const filterSlice = createSlice({
             }
             if (action.payload.price_range !== '') {
                 const selectedPriceRange = action.payload.price_range;
-                if (selectedPriceRange == 0) {
+                if (selectedPriceRange === 0) {
                     state.items = state.items.filter((product) => parseInt(product.price) < 3);
                 }
-                if (selectedPriceRange == 1) {
+                if (selectedPriceRange === 1) {
                     state.items = state.items.filter((product) => (parseInt(product.price) >= 3) && (parseInt(product.price) < 10));
                 }
-                if (selectedPriceRange == 2) {
+                if (selectedPriceRange === 2) {
                     state.items = state.items.filter((product) => parseInt(product.price) >= 10);
                 }
             }

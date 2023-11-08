@@ -4,7 +4,7 @@ import Pagination from "./pagination";
 import styled from "styled-components";
 import filter from "../assets/filter.png";
 import FilterModal from "../filter_components/filter_Modal";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 
 const NavBar = styled.div`
     display: flex;
