@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import ProductList from "./productList";
 import Pagination from "./pagination";
 import styled from "styled-components";
-import products from "../assets/products_Data";
 import filter from "../assets/filter.png";
 import FilterModal from "../filter_components/filter_Modal";
+import { useSelector, useDispatch } from "react-redux";
+
 const NavBar = styled.div`
     display: flex;
     flex-direction: row;
@@ -38,7 +39,7 @@ const Heading = styled.h1`
 
 const ProductFront = () => {
 
-    const productData = products.data.items;
+    const productData = useSelector((state) => state.filter.items);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 8;
     const lastPostIndex = currentPage * postsPerPage;

@@ -10,6 +10,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import { p_c_filter } from "./filterSlice";
+import { useDispatch } from "react-redux";
+
 const ModalOverlay = (props) => {
     const content = (
         <div className={`modal ${props.className}`}>
@@ -27,7 +30,7 @@ const ModalOverlay = (props) => {
 }
 
 const FilterModal = (props) => {
-
+    const dispatch = useDispatch();
     const [properties, setProperties] = useState({
         category: '',
         price_range: '',
@@ -42,7 +45,6 @@ const FilterModal = (props) => {
 
         })
     };
-
     return (
         <React.Fragment>
             {props.show && <Backdrop onClick={props.closeBox} />}
@@ -55,7 +57,7 @@ const FilterModal = (props) => {
             >
                 <ModalOverlay
 
-                    footer={<button style={{ width: '100px', background: 'red' }} onClick={() => console.log(properties)}>Apply</button>}
+                    footer={<button style={{ width: '100px', background: 'red' }} onClick={() => dispatch(p_c_filter(properties))}>Apply</button>}
                     onSubmit = {handleChange}
                 >
                     <Box className="box" sx={{ minWidth: 60 }}>
