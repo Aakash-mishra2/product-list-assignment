@@ -45,6 +45,9 @@ const FilterModal = (props) => {
 
         })
     };
+    const applyFilter = () => {
+
+    }
     return (
         <React.Fragment>
             {props.show && <Backdrop onClick={props.closeBox} />}

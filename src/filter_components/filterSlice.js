@@ -11,14 +11,25 @@ const filterSlice = createSlice({
                 category: [Apparel, Drinkware, Headgear], 
                 price_range: [Below 3,  3 to 10, Above 10]
             */
-           if(action.payload.category !== ''){
-            const category = ['apparel', 'drinkware', 'headgear'];
-            const selectedCategory = category[action.payload.category];
-            state.items = state.items.filter((product) => product.category === selectedCategory);
-           }
-           if(action.payload.price_range !== ''){
-            const selectedPriceRange = action.payload.price_range;
-           }
+           state.items = initialState;
+            if (action.payload.category !== '') {
+                state.items = initialState.items;
+                const category = ['apparel', 'drinkware', 'headgear'];
+                const selectedCategory = category[action.payload.category];
+                state.items = state.items.filter((product) => product.category === selectedCategory);
+            }
+            if (action.payload.price_range !== '') {
+                const selectedPriceRange = action.payload.price_range;
+                if (selectedPriceRange == 0) {
+                    state.items = state.items.filter((product) => parseInt(product.price) < 3);
+                }
+                if (selectedPriceRange == 1) {
+                    state.items = state.items.filter((product) => (parseInt(product.price) >= 3) && (parseInt(product.price) < 10));
+                }
+                if (selectedPriceRange == 2) {
+                    state.items = state.items.filter((product) => parseInt(product.price) >= 10);
+                }
+            }
         }
     }
 });
