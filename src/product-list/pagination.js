@@ -1,6 +1,14 @@
 import './styles/pagination.css';
-
-const Pagination = (
+import Pagination from "@mui/material/Pagination";
+import styled from 'styled-components';
+const Pagn = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 10px;
+`;
+const Pagination_ = (
     {
         totalItems,
         postsPerPage,
@@ -15,18 +23,16 @@ const Pagination = (
     }
 
     return (
-        <div className='pagination'>
-            {pages.map((page, index) => {
-                return (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentPage(page)}
-                        className={page === currentPage ? "active" : ""}>
-                        {page}
-                    </button>
-                );
-            })}
-        </div>
+        <Pagn>
+        <Pagination 
+        count={Math.ceil(totalItems/postsPerPage)}
+        onClick={(event) => setCurrentPage(String(event.target.innerHTML).charAt(0))}
+        boundaryCount={2}
+        size='large'
+
+        />
+
+        </Pagn>
     );
 }
-export default Pagination;
+export default Pagination_;

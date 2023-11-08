@@ -19,6 +19,7 @@ const ProductList = ({allProducts}) => {
                         name={item.name}
                         price={item.price}
                         description={item.description}
+                        category = {item.category}
                     />
                 );
             })}

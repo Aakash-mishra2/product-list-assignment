@@ -11,7 +11,7 @@ const NavBar = styled.div`
     flex-direction: row;
     justify-content: space-between;
     color: #ECE3CE;
-    background: #0C356A;
+    background: #132043;
 `;
 const FilterButton = styled.button`
     padding: 8px;
