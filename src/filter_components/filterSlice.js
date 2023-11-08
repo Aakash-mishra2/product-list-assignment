@@ -1,4 +1,4 @@
-import products from "../product-list/styles/products_Data"
+import products from "../assets/products_Data"
 import { createSlice } from "@reduxjs/toolkit";
 const initialValue = products.data.items;
 

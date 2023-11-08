@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ProductList from "./productList";
 import Pagination from "./pagination";
 import styled from "styled-components";
-import products from "./styles/products_Data";
+import products from "../assets/products_Data";
 import filter from "../assets/filter.png";
-
+import FilterModal from "../filter_components/filter_Modal";
 const NavBar = styled.div`
     display: flex;
     flex-direction: row;
@@ -50,9 +50,10 @@ const ProductFront = () => {
 
     return (
         <React.Fragment>
+        <FilterModal show={openFilter} closeBox={toggleBox} />
         <NavBar>
             <Heading>Product List</Heading>
-            <FilterButton onClick={() => console.log(productData.length)}>
+            <FilterButton onClick={toggleBox}>
                 <img src={filter} alt="filter" />
                 <h2>Filters</h2>
             </FilterButton>

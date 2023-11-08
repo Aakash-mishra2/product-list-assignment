@@ -40,8 +40,10 @@
     text-align: justify;
     font-size: 18px;
   }
-  
-  
+  .box{
+    margin: 5px;
+    margin-top: 1rem;
+  }
   .modal__footer {
     margin-top: 0.8rem;
     padding: 0.3rem 0.5rem;
