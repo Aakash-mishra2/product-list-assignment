@@ -81,13 +81,15 @@ const FilterModal = (props) => {
                                 })
                                 dispatch(removeAll());
                                 props.closeBox();
-                            }
-                            }><b>REMOVE ALL</b></ApplyButton>
+                            }}>
+                                <b>REMOVE ALL</b>
+                            </ApplyButton>
                             <ApplyButton onClick={() => {
                                 dispatch(p_c_filter(properties));
                                 props.closeBox();
-                            }
-                            }><b>APPLY</b></ApplyButton>
+                            }}>
+                                <b>APPLY</b>
+                            </ApplyButton>
 
                         </div>
 
@@ -106,7 +108,8 @@ const FilterModal = (props) => {
                             >
                                 <MenuItem value={0}> Below $3 </MenuItem>
                                 <MenuItem value={1}> Between $3 to $10 </MenuItem>
-                                <MenuItem value={2}> Above $10 </MenuItem>
+                                <MenuItem value={2}> Between $10 to $30</MenuItem>
+                                <MenuItem value={3}> Above $10 </MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
@@ -124,6 +127,8 @@ const FilterModal = (props) => {
                                 <MenuItem value={0}>Apparel</MenuItem>
                                 <MenuItem value={1}>Drinkware</MenuItem>
                                 <MenuItem value={2}>Headgear</MenuItem>
+                                <MenuItem value={3}>Office</MenuItem>
+                                <MenuItem value={4}>Accessories</MenuItem>
                             </Select>
                         </FormControl>
                     </Box>

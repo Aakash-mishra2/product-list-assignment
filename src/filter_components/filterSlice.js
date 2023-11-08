@@ -14,7 +14,7 @@ const filterSlice = createSlice({
            state.items = initialState.items;
             if (action.payload.category !== '') {
                 state.items = initialState.items;
-                const category = ['apparel', 'drinkware', 'headgear'];
+                const category = ['apparel', 'drinkware', 'headgear', 'office', 'accessories'];
                 const selectedCategory = category[action.payload.category];
                 state.items = state.items.filter((product) => product.category === selectedCategory);
             }
@@ -27,7 +27,10 @@ const filterSlice = createSlice({
                     state.items = state.items.filter((product) => (parseInt(product.price) >= 3) && (parseInt(product.price) < 10));
                 }
                 if (selectedPriceRange === 2) {
-                    state.items = state.items.filter((product) => parseInt(product.price) >= 10);
+                    state.items = state.items.filter((product) => (parseInt(product.price) >= 10) && (parseInt(product.price) < 30));
+                }
+                if (selectedPriceRange === 3) {
+                    state.items = state.items.filter((product) => parseInt(product.price) >= 30);
                 }
             }
         },
