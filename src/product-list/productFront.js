@@ -31,7 +31,11 @@ const Heading = styled.h1`
     font-size: 45px;
     text-align: left;
 `;
-
+const Sortcomp = styled.div`
+    margin-left: 500px; 
+    display: flex;
+    flex-direction: row;
+`;
 const ProductFront = () => {
     const dispatch = useDispatch();
     const productData = useSelector((state) => state.filter.items);
@@ -44,11 +48,11 @@ const ProductFront = () => {
     const [openFilter, setOpenFilter] = useState(false);
     const toggleBox = () => setOpenFilter(p => !p);
 
-    const [sortType, setSortType] = useState();
+    const [sortType, setSortType] = useState('');
     const handleChange = (event) => {
         setSortType(event.target.value);
-        if (sortType === 0) { dispatch(priceLowToHigh); }
-        if (sortType === 1) { dispatch(priceHighToLow); }
+        if (sortType === 0) { dispatch(priceLowToHigh()); }
+        if (sortType === 1) { dispatch(priceHighToLow()); }
     }
 
     return (
@@ -56,7 +60,16 @@ const ProductFront = () => {
             <FilterModal show={openFilter} closeBox={toggleBox} />
             <NavBar>
                 <Heading>Product List</Heading>
-                <Box sx={{ minWidth: 150 }}>
+                <Sortcomp>
+                <h1 
+                    style={{
+                        color: 'white', 
+                        fontSize: '20px',
+                        marginTop: '20px'
+                        }}>
+                SORT BY
+                </h1>
+                <Box sx={{ minWidth: 60 }}>
                     <FormControl fullWidth >
                         <InputLabel id="demo-simple-select-label"> Sort By</InputLabel>
                         <Select
@@ -65,7 +78,6 @@ const ProductFront = () => {
                                 color: 'white',
                                 '& .MuiOutlinedInput-notchedOutline': {
                                     borderColor: 'white',
-                                    borderWidth: 'thick',
                                 },
                                 '.MuiSvgIcon-root ': {
                                     fill: "white !important",
@@ -86,6 +98,7 @@ const ProductFront = () => {
                         </Select>
                     </FormControl>
                 </Box>
+                </Sortcomp>
                 <Button
                     variant="outlined"
                     onClick={toggleBox}

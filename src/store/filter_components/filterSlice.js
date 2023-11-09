@@ -38,10 +38,10 @@ const filterSlice = createSlice({
             state.items = initialState.items;
         },
         priceLowToHigh: (state) => {
-            state.items = state.items.sort((a, b) => { return a.price - b.price; });
+            state.items.sort((a,b) => { return (b.price - a.price); });
         },
         priceHighToLow: (state) => {
-            state.items = state.items.sort((a,b) => { return b.price - a.price; });
+            state.items.sort((a,b) => { return (a.price - b.price); });
         }
 
     }
