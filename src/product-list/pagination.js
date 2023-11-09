@@ -1,4 +1,3 @@
-import './styles/pagination.css';
 import Pagination from "@mui/material/Pagination";
 import styled from 'styled-components';
 const Pagn = styled.div`

@@ -1,4 +1,4 @@
-import products from "../assets/products_Data"
+import products from "../../assets/products_Data"
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = products.data;
 
@@ -8,7 +8,7 @@ const filterSlice = createSlice({
     reducers: {
         p_c_filter: (state, action) => {
             /*
-                category: [Apparel, Drinkware, Headgear], 
+                category: [Apparel, Drinkware, Headgear, Office, Accessories], 
                 price_range: [Below 3,  3 to 10, Above 10]
             */
            state.items = initialState.items;
@@ -36,9 +36,16 @@ const filterSlice = createSlice({
         },
         removeAll : (state) => {
             state.items = initialState.items;
+        },
+        priceLowToHigh: (state) => {
+            state.items = state.items.sort((a, b) => { return a.price - b.price; });
+        },
+        priceHighToLow: (state) => {
+            state.items = state.items.sort((a,b) => { return b.price - a.price; });
         }
+        
     }
 });
 
-export const { p_c_filter, removeAll } = filterSlice.actions;
+export const { p_c_filter, removeAll, priceSort_Ascending } = filterSlice.actions;
 export default filterSlice.reducer;

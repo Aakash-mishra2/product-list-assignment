@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import ReactDOM from "react-dom";
-import Backdrop from "../shared/backDrop";
+import Backdrop from "../../shared/backDrop";
 import "./filter_Modal.css";
 
 import Box from '@mui/material/Box';
@@ -9,22 +9,11 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Button from "@mui/material/Button";
 
 import { p_c_filter, removeAll } from "./filterSlice";
 import { useDispatch } from "react-redux";
 
-import styled from "styled-components";
-const ApplyButton = styled.button`
-     padding: 8px;
-    margin-right: 50px;
-    background: white;
-    border-radius: 12px;
-    border-color: red;
-    width: max-content;
-    height: fit-content;
-    margin-bottom: 10px;
-    margin-top: 0;
-`;
 
 const ModalOverlay = (props) => {
     const content = (
@@ -41,7 +30,6 @@ const ModalOverlay = (props) => {
     )
     return ReactDOM.createPortal(content, document.getElementById('modal'));
 }
-
 const FilterModal = (props) => {
     const dispatch = useDispatch();
     const [properties, setProperties] = useState({
@@ -72,9 +60,12 @@ const FilterModal = (props) => {
                 <ModalOverlay
 
                     footer={
-                        <div>
-
-                            <ApplyButton onClick={() => {
+                        <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
+                            <Button 
+                            variant="outlined"
+                            color="error"
+                            style={{fontSize: '20px', color: 'red', borderWidth: 'thick'}}
+                            onClick={() => {
                                 setProperties({
                                     category: '',
                                     price_range: ''
@@ -82,14 +73,17 @@ const FilterModal = (props) => {
                                 dispatch(removeAll());
                                 props.closeBox();
                             }}>
-                                <b>REMOVE ALL</b>
-                            </ApplyButton>
-                            <ApplyButton onClick={() => {
+                            <b>REMOVE ALL</b>
+                            </Button>
+                            <Button 
+                            variant="outlined"
+                            style={{fontSize: '20px', color: 'blue', borderWidth: 'thick'}}
+                            onClick={() => {
                                 dispatch(p_c_filter(properties));
                                 props.closeBox();
                             }}>
-                                <b>APPLY</b>
-                            </ApplyButton>
+                            <b>APPLY</b>
+                            </Button>
 
                         </div>
 
@@ -109,7 +103,7 @@ const FilterModal = (props) => {
                                 <MenuItem value={0}> Below $3 </MenuItem>
                                 <MenuItem value={1}> Between $3 to $10 </MenuItem>
                                 <MenuItem value={2}> Between $10 to $30</MenuItem>
-                                <MenuItem value={3}> Above $10 </MenuItem>
+                                <MenuItem value={3}> Above $30 </MenuItem>
                             </Select>
                         </FormControl>
                     </Box>
