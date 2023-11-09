@@ -43,9 +43,9 @@ const filterSlice = createSlice({
         priceHighToLow: (state) => {
             state.items = state.items.sort((a,b) => { return b.price - a.price; });
         }
-        
+
     }
 });
 
-export const { p_c_filter, removeAll, priceSort_Ascending } = filterSlice.actions;
+export const { p_c_filter, removeAll, priceLowToHigh, priceHighToLow } = filterSlice.actions;
 export default filterSlice.reducer;
